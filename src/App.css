@@ -1,0 +1,717 @@
+/* ========================================
+   우리WON뱅킹 미니 - App.css
+======================================== */
+
+
+/* 1. 전체 화면 */
+body {
+  margin: 0;
+
+  background: #f4f7fb;
+
+  font-family:
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+
+  color: #1a1a1a;
+}
+
+
+/* 2. 앱 전체 영역 */
+#root {
+  max-width: 420px;
+
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+
+  box-sizing: border-box;
+}
+
+
+/* 3. 상단 인사말 */
+h1 {
+  margin: 0 0 20px;
+
+  color: #1261c9;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* ========================================
+   상단 버튼
+======================================== */
+
+.button-group {
+  display: flex;
+  gap: 8px;
+
+  margin-bottom: 16px;
+}
+
+.button-group button {
+  flex: 1;
+
+  padding: 10px 12px;
+
+  background: #f7faff;
+  color: #245a9c;
+
+  border: 1px solid #d7e5fa;
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: none;
+}
+
+.button-group button:hover {
+  background: #eaf2ff;
+}
+
+/* 클릭했을 때 생기는 검은 테두리 제거 */
+.button-group button:focus {
+  outline: none;
+}
+
+/* 키보드로 선택했을 때는 파란 표시 */
+.button-group button:focus-visible {
+  box-shadow: 0 0 0 3px rgba(40, 120, 229, 0.18);
+}
+
+
+/* ========================================
+   총 자산 카드 내부 세부 요소 스타일
+======================================== */
+
+.total-balance-box {
+  margin: 20px 0 28px;
+  padding: 24px 20px;
+  background: linear-gradient(135deg, #2f80ed 0%, #1668dc 100%);
+  border-radius: 20px;
+  color: white;
+  text-align: center; /* 전체 가운데 정렬 */
+  box-shadow: 0 10px 24px rgba(22, 104, 220, 0.22);
+}
+
+.total-balance-label {
+  margin-bottom: 10px; /* 금액과의 간격 확대 */
+  font-size: 16px;      /* 기존 13px에서 16px로 확대 */
+  font-weight: 600;     /* 글씨 두께 약간 가중 */
+  opacity: 0.95;
+}
+
+.total-balance-value {
+  font-size: 28px;      /* 금액도 시원하게 약간 확대 */
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+
+/* ========================================
+   Panel
+   내 계좌 / 최근 거래
+======================================== */
+
+.panel {
+  margin-top: 32px;
+}
+
+.panel-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin: 0 0 16px;
+
+  color: #162b4d;
+
+  font-size: 19px;
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+
+  text-align: left;
+}
+
+/* 제목 왼쪽 파란 막대 */
+.panel-title::before {
+  content: "";
+
+  width: 5px;
+  height: 20px;
+
+  background: #2878e5;
+
+  border-radius: 4px;
+}
+
+
+/* ========================================
+   공통 카드
+======================================== */
+
+.card {
+  margin-bottom: 12px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border-radius: 16px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+  box-sizing: border-box;
+}
+
+
+/* ========================================
+   계좌 카드
+======================================== */
+
+.account-card {
+  padding: 22px 20px;
+
+  border: 1px solid #e7edf5;
+
+  box-shadow: 0 5px 18px rgba(30, 70, 120, 0.07);
+}
+
+
+/* 첫 번째 계좌 */
+.account-card:nth-of-type(1) {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #eef6ff 100%
+  );
+}
+
+
+/* 두 번째 계좌 */
+.account-card:nth-of-type(2) {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #eefaf6 100%
+  );
+}
+
+
+/* 세 번째 계좌 */
+.account-card:nth-of-type(3) {
+  background: linear-gradient(
+    135deg,
+    #ffffff 0%,
+    #f7f3ff 100%
+  );
+}
+
+
+/* 계좌 종류 + 상태 */
+.account-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+}
+
+
+/* 계좌번호 */
+.account-number {
+  margin: 8px 0 12px;
+
+  color: #718096;
+
+  font-size: 14px;
+}
+
+
+/* 잔액 */
+.balance {
+  color: #142d4c;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  letter-spacing: -0.7px;
+}
+
+
+/* 보조 글씨 */
+.muted {
+  color: #8b8f98;
+
+  font-size: 13px;
+}
+
+
+/* ========================================
+   입금 버튼
+======================================== */
+
+.deposit-button {
+  padding: 7px 12px;
+
+  background: #eef5ff;
+  color: #1668dc;
+
+  border: 1px solid #d6e7ff;
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.deposit-button:hover {
+  background: #e2efff;
+}
+
+.deposit-button:focus {
+  outline: none;
+}
+
+.balance-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+}
+
+.masked-amount {
+  font-size: 16px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+
+.masked-total-amount {
+  font-size: 14px;
+  letter-spacing: 2px;
+  vertical-align: middle;
+}
+
+/* ========================================
+   거래 내역 필터 버튼 (App.css 확장)
+======================================== */
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.filter-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-label {
+  margin-bottom: 6px;
+  color: #718096;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 1. 거래 종류 세그먼트 탭 */
+.segmented-control {
+  display: flex;
+  width: 100%;
+  padding: 4px;
+  background: #edf2f7;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.segmented-btn {
+  flex: 1;
+  padding: 8px 0;
+  background: transparent;
+  color: #4a5568;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.segmented-btn:hover {
+  color: #1a202c;
+}
+
+.segmented-btn:focus {
+  outline: none;
+}
+
+.segmented-btn.active {
+  background: #ffffff;
+  color: #1668dc;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+/* 2. 카테고리 가로 스크롤 칩 */
+.chip-scroll-wrapper {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -ms-overflow-style: none; /* IE, Edge 스크롤바 숨김 */
+  scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+}
+
+.chip-scroll-wrapper::-webkit-scrollbar {
+  display: none; /* Chrome, Safari 스크롤바 숨김 */
+}
+
+.chip-btn {
+  white-space: nowrap;
+  padding: 6px 14px;
+  background: #ffffff;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chip-btn:hover {
+  background: #f7fafc;
+}
+
+.chip-btn:focus {
+  outline: none;
+}
+
+.chip-btn.active {
+  background: #eef5ff;
+  color: #1668dc;
+  border-color: #d6e7ff;
+  font-weight: 700;
+}
+
+/* 목록 구분선 & 예외 메시지 */
+.transaction-list {
+  margin-top: 12px;
+}
+
+.empty-message {
+  padding: 32px 0;
+  color: #8b8f98;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ========================================
+   필터 버튼 디자인 강제 덮어쓰기
+======================================== */
+
+/* 1. 기본 브라우저 버튼 스타일 강제 초기화 */
+.filter-container button {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none !important;
+  outline: none !important;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* 2. 필터 전체 박스 */
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 16px 0 24px;
+}
+
+.filter-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-label {
+  margin-bottom: 6px;
+  color: #8b95a1;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 3. 거래 종류 세그먼트 탭 */
+.segmented-control {
+  display: flex;
+  width: 100%;
+  padding: 3px;
+  background-color: #f2f4f6;
+  border-radius: 10px !important;
+  box-sizing: border-box;
+}
+
+.segmented-btn {
+  flex: 1;
+  padding: 7px 0;
+  color: #6b7684;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px !important;
+  transition: all 0.15s ease;
+}
+
+.segmented-btn.active {
+  background-color: #ffffff !important;
+  color: #1976d2 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 카테고리 줄바꿈 배치 */
+.chip-scroll-wrapper {
+  display: flex !important;
+  flex-wrap: wrap !important; /* 화면 넘어가면 다음 줄로 자동 이동 */
+  gap: 8px 6px !important;
+  width: 100% !important;
+  margin-top: 4px;
+}
+
+.chip-btn {
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+  padding: 6px 12px !important;
+  background-color: #f2f4f6 !important;
+  color: #4e5968 !important;
+  border-radius: 20px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.chip-btn.active {
+  background-color: #e8f3ff !important;
+  color: #1976d2 !important;
+  font-weight: 700 !important;
+}
+
+/* ========================================
+   거래 내역 카드 & 필터 최종 스타일
+======================================== */
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.filter-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* 1. 세그먼트 탭 */
+.segmented-control {
+  display: flex;
+  flex: 1;
+  padding: 3px;
+  background-color: #f2f4f6;
+  border-radius: 10px;
+}
+
+.segmented-btn {
+  flex: 1;
+  padding: 7px 0;
+  border: none !important;
+  outline: none !important;
+  background: none;
+  color: #6b7684;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 8px !important;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.segmented-btn.active {
+  background-color: #ffffff !important;
+  color: #1976d2 !important;
+  font-weight: 700;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* 2. 카테고리 드롭다운 */
+.custom-dropdown {
+  position: relative;
+}
+
+.dropdown-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background-color: #f2f4f6 !important;
+  border: none !important;
+  outline: none !important;
+  border-radius: 10px !important;
+  color: #4e5968;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.dropdown-toggle-btn:hover {
+  background-color: #e5e8eb !important;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 50;
+  min-width: 130px;
+  padding: 6px;
+  margin: 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 1px solid #f2f4f6;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 8px 10px;
+  text-align: left;
+  border: none !important;
+  outline: none !important;
+  background: none;
+  border-radius: 6px !important;
+  color: #4e5968;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f2f4f6 !important;
+}
+
+.dropdown-item.selected {
+  color: #1976d2 !important;
+  font-weight: 700;
+  background-color: #e8f3ff !important;
+}
+
+/* 3. 거래 내역 리스트 구분선 */
+.transaction-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-list > *:not(:last-child) {
+  border-bottom: 1px solid #f2f4f6;
+}
+
+.empty-message {
+  padding: 32px 0;
+  color: #8b8f98;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ========================================
+   오늘의 환율 카드 스타일
+======================================== */
+
+.exchange-card {
+  padding: 18px 20px;
+  margin-bottom: 12px;
+}
+
+.exchange-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.currency-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #718096;
+}
+
+/* 정상 환율 출력 */
+.rate-value {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #142d4c;
+}
+
+.base-unit {
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.equals {
+  color: #a0aec0;
+  font-size: 13px;
+}
+
+.target-price {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1668dc;
+}
+
+/* 에러 처리 및 다시 시도 버튼 */
+.exchange-error-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.retry-btn {
+  padding: 4px 10px;
+  background-color: #f2f4f6;
+  border: none !important;
+  outline: none !important;
+  border-radius: 6px !important;
+  color: #4e5968;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.retry-btn:hover {
+  background-color: #e5e8eb !important;
+}
