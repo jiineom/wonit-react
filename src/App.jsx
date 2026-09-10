@@ -3,11 +3,11 @@ import './App.css'
 import Clock from './components/Clock.jsx'
 import Panel from './components/Panel.jsx'
 import AccountCard from './components/AccountCard.jsx'
-import Header from './components/Header'
+import Header from './components/Header.jsx'
 import { useState } from 'react'
-import TransactionList from './components/TransactionList';
+import TransactionList from './components/TransactionList.jsx';
 import { accounts as initialAccounts } from './data/mockData';
-import ExchangeRate from './components/ExchangeRate';
+import ExchangeRate from './components/ExchangeRate.jsx';
 import { UserProvider } from './contexts/UserContexts.jsx'
 
 function App() {

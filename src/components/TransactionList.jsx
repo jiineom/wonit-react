@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import TransactionRow from "./TransactionRow";
+import TransactionRow from "./TransactionRow.jsx";
 import { transactions } from "../data/mockData";
 
 function TransactionList() {
